@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { browserHistory } from 'react-router';
 
+import NavOut from './NavOut';
 import Footer from './Footer';
 
 class SignUp extends Component {
@@ -47,7 +48,7 @@ class SignUp extends Component {
   render() {
     return (
       <div>
-        {/* <Nav /> */}
+        <NavOut />
         <div className="content-wrapper">
           <div className="dashboard-wrapper">
           <div className="signup-container">

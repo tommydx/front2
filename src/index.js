@@ -13,7 +13,7 @@ render(
     <Route path="/" component={PortalPage} />
     <Route path="/signup" component={SignUp} />
     <Route path="/login" component={LogIn} />
-    <Route path="/users/:id/edit" component={EditUserPage} />
+    <Route path="/users/:user_id/edit" component={EditUserPage} />
   </Router>
   , document.getElementById('app')
 );

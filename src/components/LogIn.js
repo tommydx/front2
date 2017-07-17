@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 import axios from 'axios';
 
-// import Nav from './Nav';
+import NavOut from './NavOut';
 import Footer from './Footer';
 
 class LogIn extends Component {
@@ -44,7 +44,7 @@ class LogIn extends Component {
   render() {
     return (
       <div>
-        {/* <Nav /> */}
+        <NavOut />
         <div className='content-wrapper'>
           <div className='login-container'>
             <h2>Log In</h2>

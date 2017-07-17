@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 
 import Nav from './Nav';
+import ViewAllGearPage from './ViewAllGearPage';
 import Footer from './Footer';
 
 class UserHomePage extends Component {
@@ -10,24 +11,24 @@ class UserHomePage extends Component {
     super(props);
 
     this.state = {
-      places:[]
+      gear:[]
     };
   }
 
 //  GET request to API for user's gear data
   // componentDidMount() {
   //   axios
-  //   .get(`https://been-there-done-that-api.herokuapp.com/users/${this.props.params.user_id}/locations`,{
+  //   .get(`https://-api.herokuapp.com/users/${this.props.params.user_id}/gear`,{
         // TOKEN is placed inside a HEADER so that it is not visible
   //     headers: {
   //       'Authorization': window.localStorage.getItem('token')
   //     }
   //   })
   //   .then((response) => {
-  //     const placesData = response.data;
-  //     console.log(placesData);
+  //     const gearData = response.data;
+  //     console.log(gearData);
   //     this.setState({
-  //       places: placesData
+  //       gear: gearData
   //     });
   //   })
   //   .catch((err) => {
@@ -45,7 +46,9 @@ class UserHomePage extends Component {
 
               <div>
                 <h2>Gear</h2>
-                <Link to={`/gear/${this.props.params.user_id}/gear/new`}>
+                <ViewAllGearPage />
+
+                <Link to={`/users/${this.props.params.user_id}/gear/new`}>
                   <button type='button' className='create-new-button button'>Create New</button>
                 </Link>
               </div>

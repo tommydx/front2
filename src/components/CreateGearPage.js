@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { browserHistory } from 'react-router';
-
 
 class CreateGearPage extends Component {
   constructor(props) {
@@ -27,7 +26,7 @@ class CreateGearPage extends Component {
   handleSubmit(event) {
     event.preventDefault();
     axios
-    .post(`https://been-there-done-that-api.herokuapp.com/users/${this.props.userId}/locations`, {
+    .post(`https://-api.herokuapp.com/users/${this.props.userId}/locations`, {
       location: this.state
     }, {
       headers: {
@@ -63,9 +62,9 @@ class CreateGearPage extends Component {
 
   render() {
     return (
-      <form id="place-to-go-form" onSubmit={this.handleSubmit.bind(this)}>
+      <form id="" onSubmit={this.handleSubmit.bind(this)}>
         <div>
-          <div className="labelName">
+          <div className="formLabel">
             Name
           </div>
           <span>
@@ -74,7 +73,7 @@ class CreateGearPage extends Component {
         </div>
 
         <div>
-          <div className="labelName">
+          <div className="formLabel">
             Item Category
           </div>
           <span>
@@ -83,7 +82,7 @@ class CreateGearPage extends Component {
         </div>
 
         <div>
-          <div className="labelName">
+          <div className="formLabel">
             Item
           </div>
           <span>
@@ -92,7 +91,7 @@ class CreateGearPage extends Component {
         </div>
 
         <div>
-          <div className="labelName">
+          <div className="formLabel">
             Manufacturer
           </div>
           <span>
@@ -101,7 +100,7 @@ class CreateGearPage extends Component {
         </div>
 
         <div>
-          <div className="labelName">
+          <div className="formLabel">
             Year
           </div>
           <span>
@@ -110,7 +109,7 @@ class CreateGearPage extends Component {
         </div>
 
         <div>
-          <div className="labelName">
+          <div className="formLabel">
             Serial Number
           </div>
           <span>
@@ -119,7 +118,7 @@ class CreateGearPage extends Component {
         </div>
 
         <div>
-          <div className="labelName">
+          <div className="formLabel">
             Condition
           </div>
           <span>
@@ -128,7 +127,7 @@ class CreateGearPage extends Component {
         </div>
 
         <div>
-          <div className="labelName">
+          <div className="formLabel">
             Description
           </div>
           <span>
@@ -137,7 +136,7 @@ class CreateGearPage extends Component {
         </div>
 
         <div>
-          <div className="labelName">
+          <div className="formLabel">
             Photo
           </div>
           <span>
@@ -146,7 +145,7 @@ class CreateGearPage extends Component {
         </div>
 
         <div>
-          <div className="labelName">
+          <div className="formLabel">
             Photo
           </div>
           <span>
@@ -155,7 +154,7 @@ class CreateGearPage extends Component {
         </div>
 
         <div>
-          <div className="labelName">
+          <div className="formLabel">
             Photo
           </div>
           <span>

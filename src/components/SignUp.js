@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+// import { Link } from 'react-router';
 import axios from 'axios';
 import { browserHistory } from 'react-router';
 
@@ -47,7 +47,7 @@ class SignUp extends Component {
   render() {
     return (
       <div>
-        // <Nav />
+        {/* <Nav /> */}
         <div className="content-wrapper">
           <div className="dashboard-wrapper">
           <div className="signup-container">
@@ -132,7 +132,7 @@ class SignUp extends Component {
           </div>
           </div>
         </div>
-        <Footer />
+       <Footer />
       </div>
     );
   }

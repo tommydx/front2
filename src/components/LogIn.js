@@ -50,25 +50,27 @@ class LogIn extends Component {
             <h2>Log In</h2>
             <div className='new-location-form-container'>
               <form onSubmit={this.handleSubmit.bind(this)}>
-              <div>
-                <div className='formLabel'>
-                  Email
+                <div>
+                  <div className='formLabel'>
+                    Email
+                  </div>
+                  <span><input onChange={this.handleChange.bind(this)} name='email' type='text' required /></span>
                 </div>
-                <span><input onChange={this.handleChange.bind(this)} name='email' type='text' required /></span>
-              </div>
-              <div>
-                <div className='formLabel'>
-                  Password
+
+                <div>
+                  <div className='formLabel'>
+                    Password
+                  </div>
+                  <span><input onChange={this.handleChange.bind(this)} name='password' type='password' required /></span>
                 </div>
-                <span><input onChange={this.handleChange.bind(this)} name='password' type='password' required /></span>
-              </div>
-              <div className='login-button-container'>
-                <button type='submit' className='button-container location-edit'>Log In</button>
-              </div>
-            </form>
-          </div>
-         <Footer />
-        </div>
+
+                <div className='login-button-container'>
+                  <button type='submit' className='login-button button'>Log In</button>
+                </div>
+              </form>
+            </div>
+          <Footer />
+         </div>
         </div>
       </div>
     );

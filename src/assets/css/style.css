@@ -1,5 +1,29 @@
+
+/* Global Styles */
 body {
   height: 600px;
   width: 600px;
-  background-color: #028;
+  background-color: #46D;
+}
+
+/* Form Styles */
+
+.formLabel {
+  font-size: 30px;
+  text-shadow: 4px 4px #11360D;
+  color: #99C;
+}
+
+.hidden-ui {
+  display: none;
+}
+
+/* Buttons */
+
+.button {
+  margin: 7px 7px;
+}
+
+.nav-buttons {
+  display: flex;
 }

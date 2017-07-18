@@ -42,12 +42,12 @@ class Nav extends Component {
           <div className='nav-buttons'>
 
             <div >
-              <Link to={`/user/${this.props.userId}/edit`}>
+              <Link to={`/users/${this.props.userId}/edit`}>
                 <img className='user-image' src={`${this.state.user.photo}`} width='70px'/>
               </Link>
             </div>
 
-            <Link to={`/places/${this.props.userId}`} className='logo-link'>
+            <Link to={`/users/${this.props.userId}`} className='logo-link'>
               <div className='nav-image'>
               </div>
               <div className='logo-text'>
@@ -55,23 +55,26 @@ class Nav extends Component {
               </div>
             </Link>
 
-            <div id='signOut-nav' className='user-home-button-contain'>
-              <button type='submit' className='nav-button' onClick={this.handleLogout.bind(this)}>Sign Out</button>
+            {/* User Home Page */}
+            <div id='nav-home' className='user-home-button-contain'>
+              <Link to={`/users/${this.props.userId}`} >
+                <button type='button'  className='home-button button'>Home</button>
+              </Link>
             </div>
 
-            {/* BUTTON TO REDIRECT TO USER PROFILE INFO*/}
-            <div id='account-nav' className='user-home-button-contain'>
+            {/* User Profile Info */}
+            <div id='nav-edit-acct' className='user-home-button-contain'>
               <Link to={`/user/${this.props.userId}/edit`}>
-                <button type='submit'  className='nav-button'>Account</button>
-              </Link>
+                <button type='submit'  className='edit-acct-button button'>Account</button>
+                </Link>
             </div>
 
-            {/* BUTTON TO REDIRECT TO USER DASHBOARD */}
-            <div id='home-nav' className='user-home-button-contain'>
-              <Link to={`/places/${this.props.userId}`} >
-                <button type='button'  className='nav-button'>Home</button>
-              </Link>
+            {/* User Sign Out */}
+            <div id='nav-signout' className='user-home-button-contain'>
+              <button type='submit' className='signout-button button' onClick={this.handleLogout.bind(this)}>Sign Out</button>
             </div>
+
+
           </div>
         </nav>
       </div>

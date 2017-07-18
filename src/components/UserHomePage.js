@@ -49,7 +49,7 @@ class UserHomePage extends Component {
                 <ViewAllGearPage />
 
                 <Link to={`/users/${this.props.params.user_id}/gear/new`}>
-                  <button type='button' className='create-new-button button'>Create New</button>
+                  <button type='button' className='create-new-gear-button button'>Create New</button>
                 </Link>
               </div>
 

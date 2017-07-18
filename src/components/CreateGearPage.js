@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
-import { browserHistory } from 'react-router';
+import axios from 'axios';
+// import { browserHistory } from 'react-router';
 
 class CreateGearPage extends Component {
   constructor(props) {
@@ -162,11 +162,11 @@ class CreateGearPage extends Component {
           </span>
         </div>
 
-        <div className="hidden">
+        <div className="hidden-ui">
           <input onChange={this.handleChange} name="user_id" type="text" value={`${this.props.userId}`} />
         </div>
         <div>
-          <button type="submit">Submit Your Gear</button>
+          <button type="submit-button button ">Submit Your Gear</button>
         </div>
       </form>
     )

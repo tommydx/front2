@@ -39,7 +39,7 @@ class EditUser extends Component {
         <Nav userId={this.props.params.user_id}/>
         <div className='content-wrapper'>
           <div className='dashboard-wrapper'>
-          {/*}  <GearDisplay userId={this.state.user} theUserId={this.props.params.user_id}/>  */}
+          {/*  <GearDisplay userId={this.state.user} theUserId={this.props.params.user_id}/>  */}
             <div className='places-been-container'>
               <div className='signup-container'>
                 <EditUserForm userId={this.state.user} theUserId={this.props.params.user_id}/>

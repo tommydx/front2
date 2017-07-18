@@ -138,7 +138,7 @@ class EditUserForm extends Component {
           </div>
 
           <div>
-            <button type='submit' className='button-container'>Update Account</button>
+            <button type='submit' className='update-acct-button button'>Update Account</button>
           </div>
         </form>
       </div>

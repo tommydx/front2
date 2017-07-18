@@ -20,7 +20,7 @@ class PortalPage extends Component {
           </Link>
 
           <Link to="/login">
-            <button  type="submit">Log In</button>
+            <button type="submit" className="login-button button">Log In</button>
           </Link>
         </div>
       </div>

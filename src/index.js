@@ -3,6 +3,8 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
 
+import './assets/css/style.css';
+
 import PortalPage from './components/PortalPage';
 import SignUp from './components/SignUp';
 import LogIn from './components/LogIn';

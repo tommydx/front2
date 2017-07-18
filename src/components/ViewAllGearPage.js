@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router';
+// import axios from 'axios';
+// import { Link } from 'react-router';
 
 class ViewAllGearPage extends Component {
   constructor(props) {
@@ -78,7 +78,6 @@ class ViewAllGearPage extends Component {
       <div className="">
         <h2>Gear</h2>
         <div>
-        
         </div>
       </div>
     );
@@ -89,8 +88,7 @@ export default ViewAllGearPage;
 
 
 
-
-// { this.state.places.map((gear, index) => {
+// { this.state.gear.map((gear, index) => {
 //   return (
 //     <Gear
 //     key={index}

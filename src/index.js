@@ -11,6 +11,7 @@ import LogIn from './components/LogIn';
 import UserHomePage from './components/UserHomePage';
 import EditUserPage from './components/EditUserPage';
 import CreateGearPage from './components/CreateGearPage';
+import EditGearPage from './components/EditGearPage';
 
 render(
   <Router history={browserHistory}>
@@ -20,6 +21,7 @@ render(
     <Route path="/users/:user_id" component={UserHomePage} />
     <Route path="/users/:user_id/edit" component={EditUserPage} />
     <Route path="/users/:user_id/gear/new" component={CreateGearPage} />
+    <Route path="/users/:user_id/gear/edit" component={EditGearPage} />
   </Router>
   , document.getElementById('app')
 );

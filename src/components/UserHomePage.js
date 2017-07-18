@@ -45,7 +45,7 @@ class UserHomePage extends Component {
             <div className=''>
 
               <div>
-                <h2>Gear</h2>
+                <h2>User Info</h2>
                 <ViewAllGearPage />
 
                 <Link to={`/users/${this.props.params.user_id}/gear/new`}>

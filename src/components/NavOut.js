@@ -40,10 +40,8 @@ class NavOut extends Component {
       <div>
         <nav className=''>
           <div className=''>
-            <Link to={`/`}>
-              <div className=''>
-              </div>
-              <div className='logo-text'>
+            <Link to={`/`} className='logo-link'>
+              <div>
                 Sonic Gate
               </div>
             </Link>

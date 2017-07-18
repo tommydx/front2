@@ -7,7 +7,7 @@ class ViewAllGearPage extends Component {
     super(props);
 
     this.state = {
-      gear:[]
+      gear: []
     };
   }
 
@@ -78,6 +78,7 @@ class ViewAllGearPage extends Component {
       <div className="">
         <h2>Gear</h2>
         <div>
+          Show User's Gear
         </div>
       </div>
     );

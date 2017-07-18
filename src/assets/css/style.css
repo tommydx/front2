@@ -6,11 +6,26 @@ body {
   background-color: #46D;
 }
 
+h2 {
+  font-size: 40px;
+  text-shadow: 4px 4px #11360D;
+  color: #99C;
+}
+
+/* Site Logo Text */
+
+.logo-link {
+  font-size: 60px;
+  text-shadow: 4px 4px #11360D;
+  text-decoration: none;
+  color: #99C;
+}
+
 /* Form Styles */
 
 .formLabel {
   font-size: 30px;
-  text-shadow: 4px 4px #11360D;
+  text-shadow: 3px 3px #11360D;
   color: #99C;
 }
 

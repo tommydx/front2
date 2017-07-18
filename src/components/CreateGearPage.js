@@ -63,6 +63,7 @@ class CreateGearPage extends Component {
   render() {
     return (
       <form id="" onSubmit={this.handleSubmit.bind(this)}>
+        <h2>Add Gear</h2>
         <div>
           <div className="formLabel">
             Name

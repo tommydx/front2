@@ -9,25 +9,37 @@ class PortalPage extends Component {
     super();
   }
 
-  // <img src={require ('../assets/img/')} className="" />
+  portalClick(event) {
+    console.log(event.target.classList);
+    event.target.classList.add('animated');
+    event.target.classList.add('zoomOutUp');
+  }
+
+  handleChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  }
+
   render() {
     return(
       <div>
         <div className="logo-link">Sonic Gate</div>
-        {/*CREATE AND ADD A LOGO IMAGE HERE MAYBE*/}
-        <div className="portal-container">
-          <Link to="/signup">
-            <button type="submit">Sign Up</button>
-          </Link>
+        <img className="portal-logo" onClick={(e) => this.portalClick(e)} src="https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/WsxUquz/technological-interface-background-audio-wave-forms-diagrams-equaliser-seamless-loopable_vjlwhpwqt__S0000.jpg" height="100px"/>
+        <div className="portal-logo">
+          <div className="portal-container">
+            <Link to="/signup">
+              <button type="submit">Sign Up</button>
+            </Link>
 
-          <Link to="/login">
-            <button type="submit" className="login-button button">Log In</button>
-          </Link>
+            <Link to="/login">
+              <button type="submit" className="login-button button">Log In</button>
+            </Link>
+          </div>
         </div>
       </div>
     );
   }
-
 }
 
 export default PortalPage;

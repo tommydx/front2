@@ -21,6 +21,12 @@ h2 {
   height: 400px;
 }
 
+.portal-logo {
+  margin-top: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /* Site Logo Text */
 
 .logo-link {
@@ -50,4 +56,37 @@ h2 {
 
 .nav-buttons {
   display: flex;
+}
+
+/* Animations */
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+  animation-duration: 2s;
+}
+
+@keyframes zoomOutUp {
+  40% {
+    opacity: 1;
+    transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
+    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale3d(.1, .1, .1) translate3d(0, -2000px, 0);
+    transform-origin: center bottom;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  }
+}
+
+.zoomOutUp {
+  animation-name: zoomOutUp;
 }

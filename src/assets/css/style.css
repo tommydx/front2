@@ -3,6 +3,7 @@
 body {
   height: 600px;
   width: 600px;
+  /*background-color: #111;*/
   background-color: #46D;
 }
 
@@ -10,6 +11,12 @@ h2 {
   font-size: 40px;
   text-shadow: 4px 4px #11360D;
   color: #99C;
+}
+
+/* Portal Entry To App */
+
+.portal-container {
+
 }
 
 /* Site Logo Text */

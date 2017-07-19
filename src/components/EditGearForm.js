@@ -171,7 +171,7 @@ class EditGearForm extends Component {
             </span>
           </div>
 
-          <div className='hidden'>
+          <div className='hidden-ui'>
             <input onChange={this.handleChange} name='user_id' type='text' value={this.state.user_id} />
           </div>
 

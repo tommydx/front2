@@ -19,7 +19,7 @@ class Nav extends Component {
 
   componentDidMount() {
     axios
-      .get(` ${this.props.userId}`, {
+      .get(`http://localhost:8080/users/${this.props.userId}`, {
         // headers: {
         //   'Authorization': window.localStorage.getItem('token')
         // }
@@ -38,18 +38,18 @@ class Nav extends Component {
   render() {
     return (
       <div>
-        <nav className='nav-bar'>
+        <nav className=''>
           <div className='nav-buttons'>
 
             <div >
               <Link to={`/users/${this.props.userId}/edit`}>
-                <img className='user-image' src="http://4.bp.blogspot.com/-tI_T8cSWYqI/UKgwcI_goUI/AAAAAAAAAjc/xMTmJE0Mpus/s1600/smiley_face_punk_front.jpg" width="70px" />
+                <img className='user-img' src="http://4.bp.blogspot.com/-tI_T8cSWYqI/UKgwcI_goUI/AAAAAAAAAjc/xMTmJE0Mpus/s1600/smiley_face_punk_front.jpg" width="70px" />
               </Link>
             </div>
 
             <Link to={`/users/${this.props.userId}`} className='logo-link'>
-              <div className='nav-image'>
-                <img className="logo-image" src="https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/WsxUquz/technological-interface-background-audio-wave-forms-diagrams-equaliser-seamless-loopable_vjlwhpwqt__S0000.jpg" height="100px"/>
+              <div className='nav-img'>
+                <img className="logo-img" src="https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/WsxUquz/technological-interface-background-audio-wave-forms-diagrams-equaliser-seamless-loopable_vjlwhpwqt__S0000.jpg" height="100px"/>
               </div>
               <div>
                 Sonic Gate

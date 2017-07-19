@@ -19,16 +19,17 @@ class LogIn extends Component {
     event.preventDefault();
 
     axios
-      .post('', {
+      .post('http://localhost:8080/users/login', {
         user: this.state
       })
       .then((response) => {
         const data = response.data;
+        // console.log(data)
 
         // window.localStorage.setItem('token', data.token);
-        window.localStorage.setItem('user_id', data.user.id);
+        window.localStorage.setItem('user_id', data.id);
 
-        browserHistory.push(`/gear/${data.user.id}`);
+        browserHistory.push(`/users/${data.id}`);
       })
       .catch((err) => {
         console.log(err);
@@ -45,10 +46,10 @@ class LogIn extends Component {
     return (
       <div>
         <NavOut />
-        <div className='content-wrapper'>
+        <div className=''>
           <div className='login-container'>
             <h2>Log In</h2>
-            <div className='new-location-form-container'>
+            <div className=''>
               <form onSubmit={this.handleSubmit.bind(this)}>
                 <div>
                   <div className='formLabel'>

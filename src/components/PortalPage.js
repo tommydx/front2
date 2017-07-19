@@ -14,7 +14,7 @@ class PortalPage extends Component {
     return(
       <div>
         {/*CREATE AND ADD A LOGO IMAGE HERE MAYBE*/}
-        <div >
+        <div className="portal-container">
           <Link to="/signup">
             <button type="submit">Sign Up</button>
           </Link>

@@ -17,7 +17,7 @@ class EditUser extends Component {
 
   componentDidMount() {
     axios
-    .get(` ${this.props.params.user_id}`, {
+    .get(`http://localhost:8080/users/${this.props.params.user_id}`, {
       // headers: {
       //   'Authorization': window.localStorage.getItem('token')
       // }
@@ -34,6 +34,7 @@ class EditUser extends Component {
   }
 
   render() {
+    console.log(this.props.params.user_id)
     return (
       <div>
         <Nav userId={this.props.params.user_id}/>

@@ -28,7 +28,7 @@ class SignUp extends Component {
     event.preventDefault();
 
     axios
-      .post('', {
+      .post('http://localhost:8080/users', {
         user: this.state
       })
       .then(() => {
@@ -49,10 +49,10 @@ class SignUp extends Component {
     return (
       <div>
         <NavOut />
-        <div className="content-wrapper">
-          <div className="dashboard-wrapper">
+        <div className="">
+          <div className="">
           <div className="signup-container">
-            <h1 >Create Account</h1>
+            <h1>Create Account</h1>
 
               <form onSubmit={this.handleSubmit.bind(this)}>
 

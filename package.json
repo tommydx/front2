@@ -29,6 +29,7 @@
   "author": "Tom Docu",
   "license": "MIT",
   "dependencies": {
+    "animate.css": "3.5.2",
     "axios": "0.16.2",
     "object-assign": "4.1.0",
     "react": "15.5.4",

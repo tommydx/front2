@@ -28,8 +28,8 @@ class CreateGearPage extends Component {
   handleSubmit(event) {
     event.preventDefault();
     axios
-    .post(`https://-api.herokuapp.com/users/${this.props.userId}/locations`, {
-      location: this.state
+    .post(`http://localhost:3000/users/${this.props.userId}/gear`, {
+      gear: this.state
     }, {
       headers: {
         'Authorization': window.localStorage.getItem('token')

@@ -63,7 +63,7 @@ class EditUserForm extends Component {
   render() {
     return(
       <div>
-        <h1>Edit Account</h1>
+        <h2>Edit Account</h2>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <div>
             <div className='formLabel'>

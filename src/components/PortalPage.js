@@ -1,7 +1,7 @@
 // This will be the front page users reach when logging in or signing up.
 import React, { Component } from 'react';
 
-// React Link tags replace HTML <a> tags
+// React Link tags replace HTML <a> tags for inter App routing (use <a> tags for outside links)
 import { Link } from 'react-router';
 
 class PortalPage extends Component {
@@ -13,6 +13,7 @@ class PortalPage extends Component {
   render() {
     return(
       <div>
+        <div className="logo-link">Sonic Gate</div>
         {/*CREATE AND ADD A LOGO IMAGE HERE MAYBE*/}
         <div className="portal-container">
           <Link to="/signup">

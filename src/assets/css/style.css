@@ -16,7 +16,9 @@ h2 {
 /* Portal Entry To App */
 
 .portal-container {
-
+  display: block;
+  width: 400px;
+  height: 400px;
 }
 
 /* Site Logo Text */

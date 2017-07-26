@@ -5,50 +5,28 @@ import axios from 'axios';
 class ViewAllGearPage extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      gear: []
-    };
+    // console.log(props)
+    // this.state = {
+    //   gear: []
+    // };
   }
 
-//  GET request to API for user's places data
-  componentDidMount() {
-    axios
-    .get(`http://localhost:8080/users/${this.props.userId}/gear`, {
-      // headers: {
-      //   'Authorization': window.localStorage.getItem('token')
-      // }
+  renderGear() {
+    console.log('inside render gear with: ', this.props.gear);
+    // run through the loop
+    let gear = this.props.gear.map((piece, i) => {
+      return(
+        <div key={i} className="viewGearItem">
+          <h3>{piece.name}</h3>
+          <h4>{piece.item}</h4>
+          <h4>{piece.year}</h4>
+          <div className="viewGearPhoto">{piece.photo}</div>
+        </div>
+      )
     })
-    .then((response) => {
-      const gearData = response.data;
-
-      this.setState({
-        gear: gearData
-      });
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+    return gear;
   }
 
-  reloadViewAllGearPage() {
-    axios
-    .get(`http://localhost:8080/users/${this.props.userId}/gear`, {
-      // headers: {
-      //   'Authorization': window.localStorage.getItem('token')
-      // }
-    })
-    .then((response) => {
-      const gearData = response.data;
-
-      this.setState({
-        gear: gearData
-      });
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-  }
 
   destroyGear(index, gearId) {
     if (confirm('Are you sure you want to remove this item?') === true){
@@ -75,10 +53,10 @@ class ViewAllGearPage extends Component {
 
   render() {
     return (
-      <div className="">
+      <div className="viewGearContainer">
         <h2>Gear</h2>
-        <div>
-          Show User's Gear
+        <div className="viewUserGear">
+          {this.renderGear()}
         </div>
       </div>
     );

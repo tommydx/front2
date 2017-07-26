@@ -9,6 +9,7 @@ class PortalPage extends Component {
     super();
   }
 
+  // Animating the site logo
   portalClick(event) {
     console.log(event.target.classList);
     event.target.classList.add('animated');

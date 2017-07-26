@@ -13,19 +13,25 @@ class Nav extends Component {
 
   handleLogout(event) {
     event.preventDefault();
-    // window.localStorage.removeItem('token');
+    window.localStorage.removeItem('token');
+    window.localStorage.removeItem('user_id');
+
+
     browserHistory.push('/');
   }
 
   componentDidMount() {
+    console.log('inside component did mount Nav')
     axios
-      .get(`http://localhost:8080/users/${this.props.userId}`, {
+      // having problems with this - FIX IT 7-25-17
+      .get(`http://localhost:8080/users/${window.localStorage.user_id}`, {
         // headers: {
         //   'Authorization': window.localStorage.getItem('token')
         // }
       })
       .then((response) => {
         const userData = response.data;
+        console.log(userData);
         this.setState({
           user:userData
         });

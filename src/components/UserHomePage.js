@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import { Link } from 'react-router';
 
 import Nav from './Nav';
@@ -15,27 +15,30 @@ class UserHomePage extends Component {
     };
   }
 
-//  GET request to API for user's gear data
-  // componentDidMount() {
-  //   axios
-  //   .get(`https://-api.herokuapp.com/users/${this.props.params.user_id}/gear`,{
-        // TOKEN is placed inside a HEADER so that it is not visible
-  //     headers: {
-  //       'Authorization': window.localStorage.getItem('token')
-  //     }
-  //   })
-  //   .then((response) => {
-  //     const gearData = response.data;
-  //     console.log(gearData);
-  //     this.setState({
-  //       gear: gearData
-  //     });
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
-  // }
+ // GET request to API for user's gear data
+  componentDidMount() {
+    console.log('inside component did mount')
+    axios
+    .get(`http://localhost:8080/users/${this.props.params.user_id}/gear`,{
+      // TOKEN is placed inside a HEADER so that it is not visible
+      // headers: {
+      //   'Authorization': window.localStorage.getItem('token')
+      // }
+    })
+    .then((response) => {
+      const gearData = response.data.gear;
+      // console.log('data received -> ',response.data.gear);
+      this.setState({
+        gear: response.data.gear
+      });
+      // console.log('state set to: -> ',this.state.gear);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
 
+// ViewAllGearPage receives a prop called "gear" that takes the state of gear populated with the gear Objects from the database and passes this down from this UserHomePage to the View page
   render() {
     return (
       <div>
@@ -46,7 +49,7 @@ class UserHomePage extends Component {
 
               <div>
                 <h2>User Info</h2>
-                <ViewAllGearPage />
+                <ViewAllGearPage gear={this.state.gear}/>
 
                 <Link to={`/users/${this.props.params.user_id}/gear/new`}>
                   <button type='button' className='create-new-gear-button button'>Create New</button>

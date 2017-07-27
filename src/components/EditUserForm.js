@@ -23,9 +23,9 @@ class EditUserForm extends Component {
   componentDidMount() {
     axios
     .get(`http://localhost:8080/users/${this.props.theUserId}`, {
-      // headers: {
-      //   'Authorization': window.localStorage.getItem('token')
-      // }
+      headers: {
+        'Authorization': window.localStorage.getItem('token')
+      }
     })
     .then((response) => {
       const userData = response.data;
@@ -85,10 +85,19 @@ class EditUserForm extends Component {
 
           <div>
             <div className='formLabel'>
-                Username
+              Username
             </div>
             <span>
               <input onChange={this.handleChange} name='username' type='text' value={this.state.username} />
+            </span>
+          </div>
+
+          <div>
+            <div className='formLabel'>
+              Email
+            </div>
+            <span>
+              <input onChange={this.handleChange} name='email' type='email' value={this.state.email} />
             </span>
           </div>
 
@@ -101,14 +110,6 @@ class EditUserForm extends Component {
             </span>
           </div>
 
-          <div>
-            <div className='formLabel'>
-              Email
-            </div>
-            <span>
-              <input onChange={this.handleChange} name='email' type='email' value={this.state.email} />
-            </span>
-          </div>
 
           <div>
             <div className='formLabel'>
@@ -138,7 +139,7 @@ class EditUserForm extends Component {
           </div>
 
           <div>
-            <button type='submit' className='update-acct-button button'>Update Account</button>
+            <button type='submit-button button' className='update-acct-button button'>Update Account</button>
           </div>
         </form>
       </div>

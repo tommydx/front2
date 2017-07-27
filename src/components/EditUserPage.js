@@ -35,24 +35,23 @@ class EditUser extends Component {
       console.log(err);
     });
   }
-
+  
+  // If userId is removed from NAV user will become undefined.
+  // theUserId is allowing EditUserForm to populate edit user fields with user specific info
   render() {
     console.log(this.props.params.user_id)
     return (
       <div>
         <Nav userId={this.props.params.user_id}/>
-        <div className=''>
-          <div className=''>
-            <div className='edituser-container'>
-              <EditUserForm userId={this.state.user} theUserId={this.props.params.user_id}/>
+          <div className='editUserPage-container'>
+            <div className='editUserForm-container'>
+              <EditUserForm theUserId={this.props.params.user_id}/>
             </div>
 
-            <div className='viewGearContainer-editAcctPage'>
-              <h2>Gear</h2>
+            <div className='VGC-editPage'>
               <ViewAllGearPage gear={this.state.gear}/>
             </div>
           </div>
-        </div>
         <Footer />
       </div>
     );

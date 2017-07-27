@@ -1,8 +1,8 @@
 
 /* Global Styles */
 body {
-  height: 600px;
-  width: 600px;
+  height: 100%;
+  width: 100%;
   background-color: #46D;
 }
 
@@ -20,59 +20,6 @@ h3 {
 h4 {
   font-size: 25px;
   color: #99C;
-}
-
-/* USER HOME */
-
-.viewGearContainer {
-  margin: 15px 250px;
-  padding-right: 4px;
-  width: 600px;
-  height: 600px;
-  color: #000;
-  background-color: #24D;
-  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,6,0.75);
-  -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,6,0.75);
-  box-shadow: 0px 0px 15px 0px rgba(0,0,6,0.75);
-}
-
-
-.viewGearContainer h2 {
-  text-decoration: underline overline;
-  text-align: center;
-}
-
-.viewGearContainer h3 {
-  text-decoration: underline;
-}
-
-.viewUserGear {
-  background-color: #002;
-}
-
-.viewGearContainer-editAcctPage {
-  margin: 15px 250px;
-  padding-right: 4px;
-  width: 600px;
-  height: 600px;
-  color: #000;
-  background-color: #24D;
-  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,6,0.75);
-  -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,6,0.75);
-  box-shadow: 0px 0px 15px 0px rgba(0,0,6,0.75);
-}
-
-.viewGearContainer-editAcctPage h2 {
-  text-decoration: underline overline;
-  text-align: center;
-}
-
-.viewGearContainer-editAcctPage h3 {
-  text-decoration: underline;
-}
-
-.viewUserGear-editAcctPage {
-  background-color: #002;
 }
 
 /* PORTAL ENTRY TO APP */
@@ -106,6 +53,49 @@ h4 {
 .nav-container {
   display: flex;
 }
+
+/* USER HOME */
+
+.viewGearContainer {
+  margin: 15px 250px;
+  padding-right: 4px;
+  width: 600px;
+  height: 600px;
+  color: #000;
+  background-color: #24D;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,6,0.75);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,6,0.75);
+  box-shadow: 0px 0px 15px 0px rgba(0,0,6,0.75);
+}
+
+
+.viewGearContainer h2 {
+  text-decoration: underline overline;
+  text-align: center;
+}
+
+.viewGearContainer h3 {
+  text-decoration: underline;
+}
+
+.viewUserGear {
+  background-color: #002;
+}
+
+/* USER EDIT PAGE */
+
+.editUserPage-container {
+  display: flex;
+}
+
+.editUserForm-container {
+  background-color: #005;
+}
+
+.VGC-editPage {
+  display: inline-flex;
+}
+
 
 /* FORM STYLES */
 

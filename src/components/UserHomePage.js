@@ -21,9 +21,9 @@ class UserHomePage extends Component {
     axios
     .get(`http://localhost:8080/users/${this.props.params.user_id}/gear`,{
       // TOKEN is placed inside a HEADER so that it is not visible
-      // headers: {
-      //   'Authorization': window.localStorage.getItem('token')
-      // }
+      headers: {
+        'Authorization': window.localStorage.getItem('token')
+      }
     })
     .then((response) => {
       const gearData = response.data.gear;
@@ -51,7 +51,7 @@ class UserHomePage extends Component {
                 <h2>User Info</h2>
                 <ViewAllGearPage gear={this.state.gear}/>
 
-                <Link to={`/users/${this.props.params.user_id}/gear/new`}>
+                <Link to={`/users/${this.props.user_id}/gear/new`}>
                   <button type='button' className='create-new-gear-button button'>Create New</button>
                 </Link>
               </div>

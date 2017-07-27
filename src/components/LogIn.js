@@ -17,17 +17,17 @@ class LogIn extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(window.localStorage);
     axios
       .post('http://localhost:8080/users/login', {
         user: this.state
       })
       .then((response) => {
         const data = response.data;
-        console.log('got data', data);
 
         window.localStorage.setItem('token', data.token);
         window.localStorage.setItem('user_id', data.id);
+        console.log("handle login", window.localStorage)
+        // TOKEN IS UNDEFINED ON THIS CONSOLE LOG
 
         browserHistory.push(`/users/${data.id}`);
       })

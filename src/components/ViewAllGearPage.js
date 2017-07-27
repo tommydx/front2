@@ -13,7 +13,7 @@ class ViewAllGearPage extends Component {
 
   renderGear() {
     console.log('inside render gear with: ', this.props.gear);
-    // run through the loop
+    // Using .map function here and returning a div with the chosen attributes of the object to be printed to the webpage - then returning the entire array of user's gear - similar to FOR loop
     let gear = this.props.gear.map((piece, i) => {
       return(
         <div key={i} className="viewGearItem">
@@ -51,6 +51,7 @@ class ViewAllGearPage extends Component {
     }
   }
 
+// THIS.RENDERGEAR calls the rendergear function to print the specific user's gear to the page
   render() {
     return (
       <div className="viewGearContainer">
@@ -66,29 +67,10 @@ class ViewAllGearPage extends Component {
 export default ViewAllGearPage;
 
 
-
-// { this.state.gear.map((gear, index) => {
+// { this.state.gear.map((gear, i) => {
 //   return (
 //     <Gear
-//     key={index}
-//     gear={gear} destroyGear={this.destroyGear.bind(this, index, gear.id)}/>
+//     key={i}
+//     gear={gear} destroyGear={this.destroyGear.bind(this, i, gear.id)}/>
 //   }
 // })}
-
-// <div className="gear-view">
-// <img src={ this.props.gear.photo_1 } />
-// </div>
-// <h1>{ this.props.gear.name }</h1>
-// <div>
-// { this.state.gear.map((gear, index) => {
-//   if ((gear.user_id === this.props.params.user_id) && (place.visited)) {
-//     return (
-//       <PlaceCard
-//       key={index}
-//       place={place}/>
-//     );
-//   } else {
-//     return
-//   }
-// })}
-// </div>

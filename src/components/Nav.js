@@ -11,43 +11,49 @@ class Nav extends Component {
     };
   }
 
-  handleLogout(event) {
-    event.preventDefault();
-    window.localStorage.removeItem('token');
-    window.localStorage.removeItem('user_id');
-
-
-    browserHistory.push('/');
-  }
-
   componentDidMount() {
-    console.log('inside component did mount Nav')
+    console.log('inside component did mount NAV')
     axios
-      // having problems with this - FIX IT 7-25-17
-      .get(`http://localhost:8080/users/${window.localStorage.user_id}`, {
-        // headers: {
-        //   'Authorization': window.localStorage.getItem('token')
-        // }
+      .get(`http://localhost:8080/users/${this.props.userId}`, {
+        headers: {
+          'Authorization': window.localStorage.getItem('token')
+        }
       })
       .then((response) => {
         const userData = response.data;
-        console.log(userData);
-        this.setState({
-          user:userData
-        });
+        // window.localStorage.setItem('token', data.token);
+        // window.localStorage.setItem('user_id', data.id);
+        console.log('this is user data NAV', userData);
+        // this.setState({
+        //   user:userData
+        // });
       })
       .catch((err) => {
         console.log(err);
       });
   }
 
+  // holdUser() {
+  //   window.localStorage.setItem('token', data.token);
+  //   window.localStorage.setItem('user_id', data.id);
+  // }
+
+  handleLogout(event) {
+    event.preventDefault();
+    // REMOVE USER INFO FROM STORAGE ON LOGOUT
+    window.localStorage.removeItem('token');
+    window.localStorage.removeItem('user_id');
+    // REDIRECT USER TO PORTAL WHEN LOGGED OUT
+    browserHistory.push('/');
+  }
+
   render() {
     return (
       <div>
-        <nav className=''>
-          <div className='nav-buttons'>
+        <nav className='nav-all'>
+          <div className='nav-container'>
 
-            <div >
+            <div className="userImgContainer">
               <Link to={`/users/${this.props.userId}/edit`}>
                 <img className='user-img' src="http://4.bp.blogspot.com/-tI_T8cSWYqI/UKgwcI_goUI/AAAAAAAAAjc/xMTmJE0Mpus/s1600/smiley_face_punk_front.jpg" width="70px" />
               </Link>
@@ -57,30 +63,34 @@ class Nav extends Component {
               <div className='nav-img'>
                 <img className="logo-img" src="https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/WsxUquz/technological-interface-background-audio-wave-forms-diagrams-equaliser-seamless-loopable_vjlwhpwqt__S0000.jpg" height="100px"/>
               </div>
-              <div>
+            </Link>
+
+            <Link to={`/users/${this.props.userId}`} className='logo-link'>
+              <div className="logo-text">
                 Sonic Gate
               </div>
             </Link>
 
-            {/* User Home Page */}
-            <div id='nav-home' className=''>
-              <Link to={`/users/${this.props.userId}`} >
-                <button type='button'  className='home-button button'>Home</button>
-              </Link>
-            </div>
-
-            {/* User Profile Info */}
-            <div id='nav-edit-acct' className=''>
-              <Link to={`/users/${this.props.userId}/edit`}>
-                <button type='submit'  className='edit-acct-button button'>Account</button>
+            <div className="nav-buttons">
+              {/* User Home Page */}
+              <div className="home-button-nav">
+                <Link to={`/users/${this.props.userId}`} >
+                  <button type='button'  className='home-button button'>Home</button>
                 </Link>
-            </div>
+              </div>
 
-            {/* User Sign Out */}
-            <div id='nav-signout' className=''>
-              <button type='submit' className='signout-button button' onClick={this.handleLogout.bind(this)}>Sign Out</button>
-            </div>
+              {/* User Profile Info */}
+              <div className='edit-acct-nav'>
+                <Link to={`/users/${this.props.userId}/edit`}>
+                  <button type='submit'  className='edit-acct-button button'>Account</button>
+                  </Link>
+              </div>
 
+              {/* User Sign Out */}
+              <div className='signout-nav'>
+                <button type='submit' className='signout-button button' onClick={this.handleLogout.bind(this)}>Sign Out</button>
+              </div>
+            </div>
 
           </div>
         </nav>
@@ -90,3 +100,34 @@ class Nav extends Component {
 }
 
 export default Nav;
+
+// // USED FOR REFERENCE --- https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API
+//   function storageAvailable(type) {
+//     try {
+//         var storage = window[type],
+//             x = '__storage_test__';
+//         storage.setItem(x, x);
+//         storage.removeItem(x);
+//         return true;
+//     }
+//     catch(e) {
+//         return e instanceof DOMException && (
+//             // everything except Firefox
+//             e.code === 22 ||
+//             // Firefox
+//             e.code === 1014 ||
+//             // test name field too, because code might not be present
+//             // everything except Firefox
+//             e.name === 'QuotaExceededError' ||
+//             // Firefox
+//             e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
+//             // acknowledge QuotaExceededError only if there's something already stored
+//             storage.length !== 0;
+//     }
+// }
+// if (storageAvailable('localStorage')) {
+// 	// Yippee! We can use localStorage awesomeness
+// }
+// else {
+// 	// Too bad, no localStorage for us
+// }

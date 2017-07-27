@@ -32,9 +32,9 @@ class ViewAllGearPage extends Component {
     if (confirm('Are you sure you want to remove this item?') === true){
       axios
       .delete(`http://localhost:8080/users/${this.props.userId}/gear/${gearId}`, {
-        // headers: {
-        //   'Authorization': window.localStorage.getItem('token')
-        // }
+        headers: {
+          'Authorization': window.localStorage.getItem('token')
+        }
       })
       .then(() => {
         this.state.gear.splice(index, 1);

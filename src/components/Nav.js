@@ -13,6 +13,8 @@ class Nav extends Component {
 
   componentDidMount() {
     console.log('inside component did mount NAV')
+    let theid = window.localStorage.getItem('id');
+    console.log(theid);
     axios
       .get(`http://localhost:8080/users/${this.props.userId}`, {
         headers: {
@@ -21,8 +23,6 @@ class Nav extends Component {
       })
       .then((response) => {
         const userData = response.data;
-        // window.localStorage.setItem('token', data.token);
-        // window.localStorage.setItem('user_id', data.id);
         console.log('this is user data NAV', userData);
         // this.setState({
         //   user:userData
@@ -32,11 +32,6 @@ class Nav extends Component {
         console.log(err);
       });
   }
-
-  // holdUser() {
-  //   window.localStorage.setItem('token', data.token);
-  //   window.localStorage.setItem('user_id', data.id);
-  // }
 
   handleLogout(event) {
     event.preventDefault();
@@ -100,34 +95,3 @@ class Nav extends Component {
 }
 
 export default Nav;
-
-// // USED FOR REFERENCE --- https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API
-//   function storageAvailable(type) {
-//     try {
-//         var storage = window[type],
-//             x = '__storage_test__';
-//         storage.setItem(x, x);
-//         storage.removeItem(x);
-//         return true;
-//     }
-//     catch(e) {
-//         return e instanceof DOMException && (
-//             // everything except Firefox
-//             e.code === 22 ||
-//             // Firefox
-//             e.code === 1014 ||
-//             // test name field too, because code might not be present
-//             // everything except Firefox
-//             e.name === 'QuotaExceededError' ||
-//             // Firefox
-//             e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
-//             // acknowledge QuotaExceededError only if there's something already stored
-//             storage.length !== 0;
-//     }
-// }
-// if (storageAvailable('localStorage')) {
-// 	// Yippee! We can use localStorage awesomeness
-// }
-// else {
-// 	// Too bad, no localStorage for us
-// }

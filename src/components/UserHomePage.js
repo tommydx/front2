@@ -51,7 +51,7 @@ class UserHomePage extends Component {
                 <h2>User Info</h2>
                 <ViewAllGearPage gear={this.state.gear}/>
 
-                <Link to={`/users/${this.props.user_id}/gear/new`}>
+                <Link to={`/users/${window.localStorage.user_id}/gear/new`}>
                   <button type='button' className='create-new-gear-button button'>Create New</button>
                 </Link>
               </div>

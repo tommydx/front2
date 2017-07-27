@@ -35,21 +35,22 @@ class CreateGearPage extends Component {
         'Authorization': window.localStorage.getItem('token')
       }
     })
-    .then(() => {
-      this.props.reloadSidebar();
-      this.setState({
-        name: "",
-        item_category: "",
-        item: "",
-        manufacturer: "",
-        year: "",
-        serial_number: "",
-        condition: "",
-        description: "",
-        photo_1: "",
-        photo_2: "",
-        photo_3: "",
-      });
+    .then((data) => {
+      browserHistory.push(`/users/${window.localStorage.getItem('user_id')}`);
+      // this.props.reloadSidebar();
+      // this.setState({
+      //   name: "",
+      //   item_category: "",
+      //   item: "",
+      //   manufacturer: "",
+      //   year: "",
+      //   serial_number: "",
+      //   condition: "",
+      //   description: "",
+      //   photo_1: "",
+      //   photo_2: "",
+      //   photo_3: "",
+      // });
     })
     .catch((err) => {
       console.log(err);
@@ -65,7 +66,7 @@ class CreateGearPage extends Component {
   render() {
     return (
       <div className="create-gear-container">
-        <Nav />
+        <Nav userId={this.props.params.user_id} />
         <form id="" onSubmit={this.handleSubmit.bind(this)}>
           <h2>Add Gear</h2>
           <div>

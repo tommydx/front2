@@ -36,6 +36,7 @@ h4 {
   box-shadow: 0px 0px 15px 0px rgba(0,0,6,0.75);
 }
 
+
 .viewGearContainer h2 {
   text-decoration: underline overline;
   text-align: center;
@@ -46,6 +47,31 @@ h4 {
 }
 
 .viewUserGear {
+  background-color: #002;
+}
+
+.viewGearContainer-editAcctPage {
+  margin: 15px 250px;
+  padding-right: 4px;
+  width: 600px;
+  height: 600px;
+  color: #000;
+  background-color: #24D;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,6,0.75);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,6,0.75);
+  box-shadow: 0px 0px 15px 0px rgba(0,0,6,0.75);
+}
+
+.viewGearContainer-editAcctPage h2 {
+  text-decoration: underline overline;
+  text-align: center;
+}
+
+.viewGearContainer-editAcctPage h3 {
+  text-decoration: underline;
+}
+
+.viewUserGear-editAcctPage {
   background-color: #002;
 }
 

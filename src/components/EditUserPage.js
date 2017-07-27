@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import Nav from './Nav';
 import EditUserForm from './EditUserForm';
-// import GearDisplay from './GearDisplay';
+import ViewAllGearPage from './ViewAllGearPage';
 import Footer from './Footer';
 
 class EditUser extends Component {
@@ -11,22 +11,25 @@ class EditUser extends Component {
     super(props);
 
     this.state = {
-      user: []
+      user: [],
+      gear: []
     }
   }
 
   componentDidMount() {
     axios
     .get(`http://localhost:8080/users/${this.props.params.user_id}`, {
-      // headers: {
-      //   'Authorization': window.localStorage.getItem('token')
-      // }
+      headers: {
+        'Authorization': window.localStorage.getItem('token')
+      }
     })
     .then((response) => {
       const userData = response.data;
       this.setState({
-        user: userData
+        user: userData,
+        gear: gearData
       });
+      console.log('GOT GEAR EDIT ACCT PAGE', gearData);
     })
     .catch((err) => {
       console.log(err);
@@ -38,13 +41,15 @@ class EditUser extends Component {
     return (
       <div>
         <Nav userId={this.props.params.user_id}/>
-        <div className='content-wrapper'>
-          <div className='dashboard-wrapper'>
-      {/*  <ViewAllGearPage userId={this.state.user} theUserId={this.props.params.user_id}/>  */}
-            <div className='places-been-container'>
-              <div className='signup-container'>
-                <EditUserForm userId={this.state.user} theUserId={this.props.params.user_id}/>
-              </div>
+        <div className=''>
+          <div className=''>
+            <div className='edituser-container'>
+              <EditUserForm userId={this.state.user} theUserId={this.props.params.user_id}/>
+            </div>
+
+            <div className='viewGearContainer-editAcctPage'>
+              <h2>Gear</h2>
+              <ViewAllGearPage gear={this.state.gear}/>
             </div>
           </div>
         </div>

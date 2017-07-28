@@ -25,26 +25,10 @@ class CreateGearPage extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  // componentDidMount() {
-  //   axios
-  //   .get(`http://localhost:8080/users/${this.props.user_id.gear}`, {
-  //     headers: {
-  //       'Authorization': window.localStorage.getItem('token')
-  //     }
-  //   })
-  //   .then((response) => {
-  //     const userData = response.data;
-  //     this.setState(gearData);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
-  // }
-
   handleSubmit(event) {
     event.preventDefault();
     axios
-    .post(`http://localhost:3000/users/${this.props.userId}/gear`, {
+    .post(`http://localhost:8080/users/${this.props.params.user_id}/gear`, {
       gear: this.state
     }, {
       headers: {
@@ -52,8 +36,10 @@ class CreateGearPage extends Component {
       }
     })
     .then((data) => {
-      browserHistory.push(`/users/${window.localStorage.getItem('user_id')}`);
-      // this.props.reloadSidebar();
+      // BELOW CODE - ALSO WORKS WITH WINDOW.LOCALSTORAGE
+      window.location.href=`/users/${this.props.params.user_id}`
+
+      // this.props.reloadGear();
       // this.setState({
       //   name: "",
       //   item_category: "",

@@ -38,7 +38,7 @@ class UserHomePage extends Component {
     });
   }
 
-// ViewAllGearPage receives a prop called "gear" that takes the state of gear populated with the gear Objects from the database and passes this down from this UserHomePage to the View page
+// ViewAllGearPage receives a prop called "gear" that takes the state of gear populated with the gear Objects from the database passed down from this UserHomePage to the View page
   render() {
     return (
       <div>

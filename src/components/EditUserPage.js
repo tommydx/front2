@@ -17,6 +17,8 @@ class EditUser extends Component {
   }
 
   componentDidMount() {
+    console.log('IN COMP DID MOUNT ON EDIT PAGE');
+    console.log('getting user...')
     axios
     .get(`http://localhost:8080/users/${this.props.params.user_id}`, {
       headers: {
@@ -27,15 +29,32 @@ class EditUser extends Component {
       const userData = response.data;
       this.setState({
         user: userData,
-        gear: gearData
       });
       console.log('GOT GEAR EDIT ACCT PAGE', gearData);
     })
     .catch((err) => {
       console.log(err);
     });
+    // DO NOT NEED 2 componentDidMount functions here for the axios calls
+    console.log('getting gear...')
+    axios
+    .get(`http://localhost:8080/users/${this.props.params.user_id}/gear`,{
+      headers: {
+        'Authorization': window.localStorage.getItem('token')
+      }
+    })
+    .then((response) => {
+      const gearData = response.data.gear;
+      this.setState({
+        gear: response.data.gear
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   }
-  
+
+
   // If userId is removed from NAV user will become undefined.
   // theUserId is allowing EditUserForm to populate edit user fields with user specific info
   render() {

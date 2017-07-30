@@ -13,6 +13,22 @@ class SearchUsersPage extends Component {
     };
   }
 
+  renderUsers() {
+    console.log('IN RENDER ALL USERS', this.state);
+
+    let user = this.state.user_id.map((oneUser, i) => {
+      return(
+        <div key={i} className="viewOneUser">
+          <h3>{oneUser.fname}</h3>
+          <h3>{oneUser.lname}</h3>
+          <h4>{oneUser.username}</h4>
+          <div className="viewUserPhoto">{oneUser.photo}</div>
+        </div>
+      )
+    })
+    return oneUser;
+  }
+
   render() {
     return (
       <div className="">

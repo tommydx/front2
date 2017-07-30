@@ -21,7 +21,7 @@ class ViewAllGearPage extends Component {
           <h3>{piece.name}</h3>
           <h4>{piece.item}</h4>
           <h4>{piece.year}</h4>
-          <div className="viewGearPhoto">{piece.photo}</div>
+          <div className="viewGearPhoto">{piece.photo_1}</div>
           <button
           onClick={this.destroyGear}
           id={piece.id}

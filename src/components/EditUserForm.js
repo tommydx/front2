@@ -42,9 +42,9 @@ class EditUserForm extends Component {
     .put(`http://localhost:8080/users/${this.props.theUserId}`, {
       user: this.state
     }, {
-      // headers: {
-      //   'Authorization': window.localStorage.getItem('token')
-      // }
+      headers: {
+        'Authorization': window.localStorage.getItem('token')
+      }
     })
     .then(() => {
       browserHistory.push(`/users/${this.props.theUserId}`);

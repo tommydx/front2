@@ -43,20 +43,19 @@ class UserHomePage extends Component {
     return (
       <div>
         <Nav userId={this.props.params.user_id} />
-        <div className=''>
-          <div className=''>
-            <div className=''>
+        <div className='userHomeContainer'>
+          <div className='userInfo'>
+            <h2>User Info</h2>
+          </div>
 
-              <div>
-                <h2>User Info</h2>
-                <ViewAllGearPage gear={this.state.gear}/>
+          <div className='userHomeGearContainer'>
+            <ViewAllGearPage gear={this.state.gear}/>
+          </div>
 
-                <Link to={`/users/${window.localStorage.user_id}/gear/new`}>
-                  <button type='button' className='create-new-gear-button button'>Create New</button>
-                </Link>
-              </div>
-
-            </div>
+          <div className='userHomeNewGear'>
+            <Link to={`/users/${window.localStorage.user_id}/gear/new`}>
+              <button type='button' className='create-new-gear-button button'>Create New</button>
+            </Link>
           </div>
         </div>
         <Footer />

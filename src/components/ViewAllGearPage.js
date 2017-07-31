@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Router, browserHistory} from 'react-router';
-// import { Link } from 'react-router';
+// import { Router } from 'react-router';
+import { browserHistory } from 'react-router';
+
+import { Link } from 'react-router';
 
 class ViewAllGearPage extends Component {
   constructor(props) {
@@ -21,7 +23,16 @@ class ViewAllGearPage extends Component {
           <h3>{piece.name}</h3>
           <h4>{piece.item}</h4>
           <h4>{piece.year}</h4>
-          <div className="viewGearPhoto">{piece.photo_1}</div>
+          <div className="viewGearPhoto">
+            <img src={piece.photo_1} id="gearImg"></img>
+          </div>
+
+          <div className='edit-gear-button'>
+            <Link to={`/users/${this.props.userId}/gear/${this.props.id}/edit`}>
+              <button type='submit'  className='edit-gear-button button'>EDIT ITEM</button>
+              </Link>
+          </div>
+
           <button
           onClick={this.destroyGear}
           id={piece.id}

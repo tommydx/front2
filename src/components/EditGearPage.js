@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { browserHistory } from 'react-router';
+// import { browserHistory } from 'react-router';
 
 import Nav from './Nav';
 import EditGearForm from './EditGearForm';
@@ -46,13 +46,10 @@ class EditGearPage extends Component {
     return(
       <div>
         <Nav userId={this.props.params.user_id} />
-        <div className=''>
-          <div className=''>
-
-            <div className=''>
-              <h2>Edit Gear</h2>
-              <EditGearForm userId={this.props.params.user_id} gearId={this.props.params.id}/>
-            </div>
+        <div className='edit-gear-container'>
+          <h2>Edit Gear</h2>
+          <div className='edit-gear-form'>
+            <EditGearForm userId={this.props.params.user_id} gearId={this.props.params.id}/>
           </div>
         </div>
         <Footer />

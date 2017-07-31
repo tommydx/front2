@@ -23,10 +23,11 @@ class Nav extends Component {
       })
       .then((response) => {
         const userData = response.data;
-        console.log('this is user data NAV', userData);
-        // this.setState({
-        //   user:userData
-        // });
+        console.log('this is user data NAV', theid, userData);
+        this.setState({
+          user:userData
+        });
+        console.log('user data check 2', theid, userData);
       })
       .catch((err) => {
         console.log(err);
@@ -50,7 +51,7 @@ class Nav extends Component {
 
             <div className="userImgContainer">
               <Link to={`/users/${this.props.userId}/edit`}>
-                <img className='user-img' src="http://4.bp.blogspot.com/-tI_T8cSWYqI/UKgwcI_goUI/AAAAAAAAAjc/xMTmJE0Mpus/s1600/smiley_face_punk_front.jpg" width="70px" />
+                <img className="user-img" src={`${this.state.user.photo}`} width="70px"/>
               </Link>
             </div>
 

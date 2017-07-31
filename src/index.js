@@ -23,7 +23,7 @@ render(
     <Route path="/users/:user_id" component={UserHomePage} />
     <Route path="/users/:user_id/edit" component={EditUserPage} />
     <Route path="/users/:user_id/gear/new" component={CreateGearPage} />
-    <Route path="/users/:user_id/gear/edit" component={EditGearPage} />
+    <Route path="/users/:user_id/gear/:gear_id/edit" component={EditGearPage} />
     <Route path="/users" component={SearchUsersPage} />
   </Router>
   , document.getElementById('app')

@@ -134,7 +134,7 @@ class EditUserForm extends Component {
               Photo
             </div>
             <span>
-              <input onChange={this.handleChange} name='photo' type='text' value={this.state.photo} />
+              <input onChange={this.handleChange} name='photo' type='text' value={this.state.photo} placeholder='http://' />
             </span>
           </div>
 

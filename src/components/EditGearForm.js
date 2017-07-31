@@ -146,7 +146,7 @@ class EditGearForm extends Component {
 
           <div>
             <div className='formLabel'>
-                Add Photo
+              Add Photo
             </div>
             <span>
               <input onChange={this.handleChange} name='photo_1' type='text' placeholder='http://' value={this.state.photo_1}/>
@@ -164,7 +164,7 @@ class EditGearForm extends Component {
 
           <div>
             <div className='formLabel'>
-                Add Photo
+              Add Photo
             </div>
             <span>
               <input onChange={this.handleChange} name='photo_3' type='text' placeholder='http://' value={this.state.photo_3}/>

@@ -15,11 +15,9 @@ class UserHomePage extends Component {
     };
   }
 
- // GET request to API for user's gear data
-  componentDidMount() {
-    console.log('inside component did mount')
+  getGear() {
     axios
-    .get(`http://localhost:8080/users/${this.props.params.user_id}/gear`,{
+    .get(`http://localhost:8080/users/${window.localStorage.user_id}/gear`,{
       // TOKEN is placed inside a HEADER so that it is not visible
       headers: {
         'Authorization': window.localStorage.getItem('token')
@@ -38,18 +36,27 @@ class UserHomePage extends Component {
     });
   }
 
+ // GET request to API for user's gear data
+  componentDidMount() {
+    console.log('inside component did mount')
+    this.getGear();
+  }
+
 // ViewAllGearPage receives a prop called "gear" that takes the state of gear populated with the gear Objects from the database passed down from this UserHomePage to the View page
   render() {
     return (
       <div>
-        <Nav userId={this.props.params.user_id} />
+        <Nav userId={window.localStorage.user_id} />
         <div className='userHomeContainer'>
           <div className='userInfo'>
             <h2>User Info</h2>
           </div>
 
           <div className='userHomeGearContainer'>
-            <ViewAllGearPage gear={this.state.gear}/>
+            <ViewAllGearPage
+              gear={this.state.gear}
+              getGear= {() => this.getGear()}
+            />
           </div>
 
           <div className='userHomeNewGear'>

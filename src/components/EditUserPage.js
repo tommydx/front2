@@ -17,8 +17,7 @@ class EditUser extends Component {
   }
 
   componentDidMount() {
-    console.log('IN COMP DID MOUNT ON EDIT PAGE');
-    console.log('getting user...')
+    // console.log('get user', user_id);
     axios
     .get(`http://localhost:8080/users/${this.props.params.user_id}`, {
       headers: {
@@ -30,13 +29,11 @@ class EditUser extends Component {
       this.setState({
         user: userData,
       });
-      console.log('GOT GEAR EDIT ACCT PAGE', gearData);
     })
     .catch((err) => {
       console.log(err);
     });
-    // DO NOT NEED 2 componentDidMount functions here for the axios calls
-    console.log('getting gear...')
+
     axios
     .get(`http://localhost:8080/users/${this.props.params.user_id}/gear`,{
       headers: {
@@ -54,11 +51,10 @@ class EditUser extends Component {
     });
   }
 
-
   // If userId is removed from NAV user will become undefined.
-  // theUserId is allowing EditUserForm to populate edit user fields with user specific info
+  // theUserId is allowing EditUserForm to populate edit user fields with user specific info - IT IS PASSED AS PROPS TO THE FORM
   render() {
-    console.log(this.props.params.user_id)
+    // console.log(this.props.params.user_id);
     return (
       <div>
         <Nav userId={this.props.params.user_id}/>
@@ -68,7 +64,9 @@ class EditUser extends Component {
             </div>
 
             <div className='VGC-editPage'>
-              <ViewAllGearPage gear={this.state.gear}/>
+              <ViewAllGearPage
+              gear={this.state.gear}
+              />
             </div>
           </div>
         <Footer />

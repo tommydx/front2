@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
+import { browserHistory } from 'react-router';
 // import { Link } from 'react-router';
 
 import Nav from './Nav';
@@ -12,21 +13,39 @@ class SearchUsersPage extends Component {
       users: []
     };
   }
+// need an axios call to get all users then store in state 7-31-17
+  componentDidMount() {
+    axios
+    .get(`http://localhost:8080/users/`)
+    .then((response) => {
+      //console.log('RESPONSE IN COMP MOUNT', response);
+      // window.location.href=`/users/${this.props.params.user_id}`
+      // browserHistory.push(`/users/${window.localStorage.user_id}`);
+
+      const userData = response.data;
+      this.setState({
+        users: userData,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
 
   renderUsers() {
-    console.log('IN RENDER ALL USERS', this.state);
+    console.log('IN RENDER ALL USERS', this.props.params.user_id);
 
-    let user = this.state.user_id.map((oneUser, i) => {
+    let user = this.state.users.map((oneUser, i) => {
       return(
         <div key={i} className="viewOneUser">
+        <div className="viewUserPhoto"><img src={oneUser.photo} /></div>
           <h3>{oneUser.fname}</h3>
           <h3>{oneUser.lname}</h3>
           <h4>{oneUser.username}</h4>
-          <div className="viewUserPhoto">{oneUser.photo}</div>
         </div>
       )
     })
-    return oneUser;
+    return user;
   }
 
   render() {
@@ -34,12 +53,24 @@ class SearchUsersPage extends Component {
       <div className="">
         <Nav />
         <h2>Users</h2>
-        <div>
-          Show All Users
+        <div className="show-all-users-title">
+          Members
         </div>
+
+        <div className="viewAllUsers">
+          {this.renderUsers()}
+        </div>
+
       </div>
     );
   }
 }
 
 export default SearchUsersPage;
+
+
+// <div className='userHomeNewGear'>
+// <Link to={`/users/${oneUser.id}`}>
+// <button type='button' className='create-new-gear-button button'>Create New</button>
+// </Link>
+// </div>

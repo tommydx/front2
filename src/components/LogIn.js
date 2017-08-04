@@ -24,6 +24,8 @@ class LogIn extends Component {
       .then((response) => {
         const data = response.data;
 
+        console.log("login response", response);
+
         window.localStorage.setItem('token', data.token);
         window.localStorage.setItem('user_id', data.id);
         console.log("handle login", window.localStorage)

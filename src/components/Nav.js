@@ -16,14 +16,14 @@ class Nav extends Component {
     let theid = window.localStorage.getItem('id');
     console.log(theid);
     axios
-      .get(`http://localhost:8080/users/${this.props.userId}`, {
+      .get(`http://localhost:8080/users/${window.localStorage.user_id}`, {
         headers: {
           'Authorization': window.localStorage.getItem('token')
         }
       })
       .then((response) => {
         const userData = response.data;
-        console.log('this is user data NAV', theid, userData);
+        // console.log('this is user data NAV', theid, userData);
         this.setState({
           user:userData
         });
@@ -57,7 +57,7 @@ class Nav extends Component {
 
             <Link to={`/users/${this.props.userId}`} className='logo-link'>
               <div className='nav-img'>
-                <img className="logo-img" src="https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/WsxUquz/technological-interface-background-audio-wave-forms-diagrams-equaliser-seamless-loopable_vjlwhpwqt__S0000.jpg" height="100px"/>
+                <img className="logo-img" src="https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/WsxUquz/technological-interface-background-audio-wave-forms-diagrams-equaliser-seamless-loopable_vjlwhpwqt__S0000.jpg" />
               </div>
             </Link>
 
@@ -70,15 +70,22 @@ class Nav extends Component {
             <div className="nav-buttons">
               {/* User Home Page */}
               <div className="home-button-nav">
-                <Link to={`/users/${this.props.userId}`} >
+                <Link to={`/users/${window.localStorage.user_id}`} >
                   <button type='button'  className='home-button button'>Home</button>
                 </Link>
               </div>
 
               {/* User Profile Info */}
               <div className='edit-acct-nav'>
-                <Link to={`/users/${this.props.userId}/edit`}>
+                <Link to={`/users/${window.localStorage.user_id}/edit`}>
                   <button type='submit'  className='edit-acct-button button'>Account</button>
+                  </Link>
+              </div>
+
+              {/* User Profile Info */}
+              <div className='search-users-nav'>
+                <Link to={`/users/${window.localStorage.user_id}/search`}>
+                  <button type='submit'  className='search-users-button button'>Search Members</button>
                   </Link>
               </div>
 
@@ -87,7 +94,6 @@ class Nav extends Component {
                 <button type='submit' className='signout-button button' onClick={this.handleLogout.bind(this)}>Sign Out</button>
               </div>
             </div>
-
           </div>
         </nav>
       </div>

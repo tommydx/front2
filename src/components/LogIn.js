@@ -79,3 +79,5 @@ class LogIn extends Component {
 }
 
 export default LogIn;
+
+// https://trello.com/b/nqMbncwn/sonic-gate

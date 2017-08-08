@@ -27,10 +27,11 @@ class EditGearPage extends Component {
 
   componentDidMount() {
     console.log("MY PROPS", this.props)
-    let userId = window.localStorage.getItem("user_id");
+    // let userId = window.localStorage.getItem("user_id");
     let gearId = window.localStorage.getItem("gear_id");
+    console.log("GGGGG", gearId);
     axios
-    .get(`http://localhost:8080/users/${userId}/gear/${gearId}`, {
+    .get(`http://localhost:8080/users/${this.props.params.user_id}/gear/${gearId}`, {
       headers: {
         'Authorization': window.localStorage.getItem('token')
       }
@@ -63,7 +64,7 @@ class EditGearPage extends Component {
         <div className='edit-gear-container'>
           <h2>Edit Gear</h2>
           <div className='edit-gear-form'>
-            <EditGearForm userId={this.state.user_id} gearId={this.state.gear_id}
+            <EditGearForm userId={this.props.params.user_id} gearId={this.props.params.gear_id}
             />
           </div>
         </div>

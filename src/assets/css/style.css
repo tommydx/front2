@@ -168,6 +168,13 @@ h4 {
   color: #336;
 }
 
+/* EDIT GEAR PAGE */
+
+.editUserPage-container {
+  display: flex;
+  margin-left: 300px;
+}
+
 /* FOOTER */
 
 .footer {

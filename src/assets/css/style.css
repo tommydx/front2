@@ -151,7 +151,7 @@ h4 {
 }
 
 .editUserForm-container {
-  display: flex;
+  display: inline-table;
   margin-right: 10px;
   background-color: #005;
 }
@@ -171,8 +171,7 @@ h4 {
 /* EDIT GEAR PAGE */
 
 .editUserPage-container {
-  display: flex;
-  margin-left: 300px;
+
 }
 
 /* FOOTER */

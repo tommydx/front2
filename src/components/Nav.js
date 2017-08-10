@@ -13,8 +13,8 @@ class Nav extends Component {
 
   componentDidMount() {
     console.log('inside component did mount NAV')
-    let theid = window.localStorage.getItem('id');
-    console.log(theid);
+    let theid = window.localStorage.getItem('user_id');
+    // console.log("THE NAV ID", theid);
     axios
       .get(`http://localhost:8080/users/${window.localStorage.user_id}`, {
         headers: {
@@ -23,7 +23,6 @@ class Nav extends Component {
       })
       .then((response) => {
         const userData = response.data;
-        // console.log('this is user data NAV', theid, userData);
         this.setState({
           user:userData
         });
@@ -50,18 +49,18 @@ class Nav extends Component {
           <div className='nav-container'>
 
             <div className="userImgContainer">
-              <Link to={`/users/${this.props.userId}/edit`}>
+              <Link to={`/users/${window.localStorage.user_id}/edit`}>
                 <img className="user-img" src={`${this.state.user.photo}`} width="70px"/>
               </Link>
             </div>
 
-            <Link to={`/users/${this.props.userId}`} className='logo-link'>
+            <Link to={`/users/${window.localStorage.user_id}`} className='logo-link'>
               <div className='nav-img'>
                 <img className="logo-img" src="https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/WsxUquz/technological-interface-background-audio-wave-forms-diagrams-equaliser-seamless-loopable_vjlwhpwqt__S0000.jpg" />
               </div>
             </Link>
 
-            <Link to={`/users/${this.props.userId}`} className='logo-link'>
+            <Link to={`/users/${window.localStorage.user_id}`} className='logo-link'>
               <div className="logo-text">
                 Sonic Gate
               </div>

@@ -25,17 +25,19 @@ class PortalPage extends Component {
   render() {
     return(
       <div>
-        <div className="logo-link">Sonic Gate</div>
-        <img className="portal-logo" onClick={(e) => this.portalClick(e)} src="https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/WsxUquz/technological-interface-background-audio-wave-forms-diagrams-equaliser-seamless-loopable_vjlwhpwqt__S0000.jpg" height="100px"/>
-        <div className="portal-logo">
-          <div className="portal-container">
-            <Link to="/signup">
-              <button type="submit">Sign Up</button>
-            </Link>
+        <div className="portal-container">
+        <img className="portal-img" onClick={(e) => this.portalClick(e)} src="https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/WsxUquz/technological-interface-background-audio-wave-forms-diagrams-equaliser-seamless-loopable_vjlwhpwqt__S0000.jpg" height="100px"/>
 
-            <Link to="/login">
-              <button type="submit" className="login-button button">Log In</button>
-            </Link>
+          <div className="logo-link">Sonic Gate
+            <div className="portal-buttons">
+              <Link to="/signup">
+                <button type="submit">Sign Up</button>
+              </Link>
+
+              <Link to="/login">
+                <button type="submit" className="login-button button">Log In</button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

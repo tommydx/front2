@@ -18,10 +18,6 @@ class SearchUsersPage extends Component {
     axios
     .get(`http://localhost:8080/users/`)
     .then((response) => {
-      //console.log('RESPONSE IN COMP MOUNT', response);
-      // window.location.href=`/users/${this.props.params.user_id}`
-      // browserHistory.push(`/users/${window.localStorage.user_id}`);
-
       const userData = response.data;
       this.setState({
         users: userData,

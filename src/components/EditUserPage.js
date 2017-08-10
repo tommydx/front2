@@ -17,7 +17,6 @@ class EditUser extends Component {
   }
 
   componentDidMount() {
-    // console.log('get user', user_id);
     axios
     .get(`http://localhost:8080/users/${this.props.params.user_id}`, {
       headers: {

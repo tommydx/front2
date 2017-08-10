@@ -12,7 +12,6 @@ class Nav extends Component {
   }
 
   componentDidMount() {
-    console.log('inside component did mount NAV')
     let theid = window.localStorage.getItem('user_id');
     // console.log("THE NAV ID", theid);
     axios

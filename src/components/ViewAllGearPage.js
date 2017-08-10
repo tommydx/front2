@@ -8,16 +8,65 @@ import { Link } from 'react-router';
 class ViewAllGearPage extends Component {
   constructor(props) {
     super(props);
-    // console.log(props)
-    // this.state = {
-    //   gear: []
-    // };
+    console.log("VIEW ALL G PROPS", props);
+    this.state = {
+      gear: []
+    };
   }
+  // componentDidMount() {
+  //   axios
+  //   .get(`http://localhost:8080/users/${this.props.params.user_id}`, {
+  //     headers: {
+  //       'Authorization': window.localStorage.getItem('token')
+  //     }
+  //   })
+  //   .then((response) => {
+  //     const userData = response.data;
+  //     this.setState({
+  //       user: userData,
+  //     });
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   });
+  //
+  //   axios
+  //   .get(`http://localhost:8080/users/${this.props.params.user_id}/gear`,{
+  //     headers: {
+  //       'Authorization': window.localStorage.getItem('token')
+  //     }
+  //   })
+  //   .then((response) => {
+  //     const gearData = response.data.gear;
+  //     this.setState({
+  //       gear: response.data.gear
+  //     });
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   });
+  // }
 
   renderGear() {
     // console.log('inside render gear with: ', this.props.gear);
     // Using .map function here and returning a div with the chosen attributes of the object to be printed to the webpage - then returning the entire array of user's gear - similar to FOR loop
     let gear = this.props.gear.map((piece, i) => {
+      // axios
+      // .get(`http://localhost:8080/users/${this.props.params.user_id}/gear`,{
+      //   headers: {
+      //     'Authorization': window.localStorage.getItem('token')
+      //   }
+      // })
+      // .then((response) => {
+      //   const gearData = response.data.gear;
+      //   this.setState({
+      //     gear: response.data.gear
+      //   });
+      // })
+      // .catch((err) => {
+      //   console.log(err);
+      // });
+
       window.localStorage.setItem("gear_id", piece.id);
       return(
         <div key={i} className="viewGearItem">
@@ -29,7 +78,7 @@ class ViewAllGearPage extends Component {
           </div>
 
           <div className='edit-gear-button'>
-            <Link to={`/users/${this.props.userId}/gear/${this.props.id}/edit`}>
+            <Link to={`/users/${window.localStorage.getItem('user_id')}/gear/${piece.id}/edit`}>
               <button type='submit'  className='edit-gear-button button'>EDIT ITEM</button>
               </Link>
           </div>
@@ -43,7 +92,7 @@ class ViewAllGearPage extends Component {
     })
     return gear;
   }
-// event.target.id is pulling the gear id from the SQL and so we are hiding id inside the click event of the button in order to destroy the gear - independent of state of props
+// event.target.id is pulling the gear id from the SQL server and so we are hiding id inside the click event of the button in order to destroy the gear - independent of state or props
   destroyGear(event) {
     // console.log(event.target.id)
     // search for index of gear(event.target.id)

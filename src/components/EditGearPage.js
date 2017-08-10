@@ -27,21 +27,21 @@ class EditGearPage extends Component {
 
   componentDidMount() {
     console.log("MY PROPS", this.props)
-    // axios
-    // .get(`http://localhost:8080/users/${window.localStorage.user_id}`, {
-    //   headers: {
-    //     'Authorization': window.localStorage.getItem('token')
-    //   }
-    // })
-    // .then((response) => {
-    //   const userData = response.data;
-    //   this.setState({
-    //     user: userData,
-    //   });
-    // })
-    // .catch((err) => {
-    //   console.log(err);
-    // });
+    axios
+    .get(`http://localhost:8080/users/${window.localStorage.user_id}`, {
+      headers: {
+        'Authorization': window.localStorage.getItem('token')
+      }
+    })
+    .then((response) => {
+      const userData = response.data;
+      this.setState({
+        user: userData,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 
     let gearId = window.localStorage.getItem("gear_id");
     console.log("GGGGG", gearId);
@@ -75,11 +75,11 @@ class EditGearPage extends Component {
   render() {
     return(
       <div>
-        <Nav userId={window.localStorage.user_id} />
+        <Nav />
         <div className='edit-gear-container'>
           <h2>Edit Gear</h2>
           <div className='edit-gear-form'>
-            <EditGearForm userId={window.localStorage.user_id} gearId={this.props.params.gear_id}
+            <EditGearForm gearId={window.localStorage.gear_id}
             />
           </div>
         </div>

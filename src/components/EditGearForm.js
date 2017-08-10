@@ -25,7 +25,7 @@ class EditGearForm extends Component {
 
   componentDidMount() {
     axios
-    .get(`-api.herokuapp.com/users/${this.props.userId}/locations/${this.props.gearId}`, {
+    .get(`http://localhost:8080/users/${this.props.userId}/locations/${this.props.gearId}`, {
       headers: {
         'Authorization': window.localStorage.getItem('token')
       }
@@ -42,7 +42,7 @@ class EditGearForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
     axios
-    .put(`-api.herokuapp.com/users/${this.props.userId}/gear/${this.props.gearId}`, {
+    .put(`http://localhost:8080/users/${this.props.userId}/gear/${this.props.gearId}`, {
       gear: this.state
     }, {
       headers: {

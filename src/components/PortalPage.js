@@ -11,7 +11,7 @@ class PortalPage extends Component {
 
   // Animating the site logo
   portalClick(event) {
-    console.log(event.target.classList);
+    console.log("PORTAL PAGE", event.target.classList);
     event.target.classList.add('animated');
     event.target.classList.add('zoomOutUp');
   }

@@ -29,7 +29,6 @@ class LogIn extends Component {
         window.localStorage.setItem('token', data.token);
         window.localStorage.setItem('user_id', data.id);
         console.log("handle login", window.localStorage)
-        // TOKEN IS UNDEFINED ON THIS CONSOLE LOG
 
         browserHistory.push(`/users/${data.id}`);
       })

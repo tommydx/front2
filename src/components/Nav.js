@@ -25,7 +25,7 @@ class Nav extends Component {
         this.setState({
           user:userData
         });
-        console.log('user data check 2', theid, userData);
+        // console.log('user data check 2', theid, userData);
       })
       .catch((err) => {
         console.log(err);

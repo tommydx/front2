@@ -11,18 +11,9 @@ class EditGearPage extends Component {
     super(props);
 
     this.state = {
-      name: "",
-      item_category: "",
-      item: "",
-      manufacturer: "",
-      year: "",
-      serial_number: "",
-      condition: "",
-      description: "",
-      photo_1: "",
-      photo_2: "",
-      photo_3: ""
+      gearData: []
     };
+    console.log('EDIT GS PROPS', this.props);
   }
 
   componentDidMount() {
@@ -43,7 +34,7 @@ class EditGearPage extends Component {
       console.log(err);
     });
 
-    let gearId = window.localStorage.getItem("gear_id");
+    let gearId = this.props.params.gear_id;
     console.log("GGGGG", gearId);
     axios
     .get(`http://localhost:8080/users/${window.localStorage.user_id}/gear/${gearId}`, {
@@ -53,17 +44,7 @@ class EditGearPage extends Component {
     })
     .then((response) => {
       const gearData = response.data;
-      this.setState({name: response.data.name,
-      item_category: response.data.item_category,
-      item: response.data.item,
-      manufacturer: response.data.manufacturer,
-      year: response.data.year,
-      serial_number: response.data.serial_number,
-      condition: response.data.condition,
-      description: response.data.description,
-      photo_1: response.data.photo_1,
-      photo_2: response.data.photo_2,
-      photo_3: response.data.photo_3
+      this.setState({gearData
       });
       console.log('EDIT GEAR DATA', gearData);
     })
@@ -79,7 +60,7 @@ class EditGearPage extends Component {
         <div className='edit-gear-container'>
           <h2>Edit Gear</h2>
           <div className='edit-gear-form'>
-            <EditGearForm gearId={window.localStorage.gear_id}
+            <EditGearForm gearData={this.state.gearData}
             />
           </div>
         </div>

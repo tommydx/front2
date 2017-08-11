@@ -50,21 +50,21 @@ class EditUser extends Component {
     });
   }
 
-  // updateUser(event) {
-  //   if (confirm('Are you sure you want to change your information?') === true){
-  //     axios.update(`http://localhost:8080/users/${window.localStorage.user_id}`, {
-  //       headers: {
-  //         'Authorization':window.localStorage.getItem('token')
-  //       }
-  //     })
-  //     .then(() => {
-  //       browserHistory.push(`/users/${window.localStorage.user_id}`);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  //   }
-  // }
+  updateUser(event) {
+    if (confirm('Are you sure you want to change your information?') === true){
+      axios.put(`http://localhost:8080/users/${window.localStorage.user_id}`, {
+        headers: {
+          'Authorization':window.localStorage.getItem('token')
+        }
+      })
+      .then(() => {
+        browserHistory.push(`/users/${window.localStorage.user_id}`);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    }
+  }
 
   // If userId is removed from NAV user will become undefined.
   // theUserId is allowing EditUserForm to populate edit user fields with user specific info - IT IS PASSED AS PROPS TO THE FORM

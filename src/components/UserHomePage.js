@@ -38,7 +38,6 @@ class UserHomePage extends Component {
 
  // GET request to API for user's gear data
   componentDidMount() {
-    console.log('inside component did mount')
     this.getGear();
   }
 

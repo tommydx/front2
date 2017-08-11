@@ -3,7 +3,7 @@
 body {
   height: 100%;
   width: 100%;
-  background-color: #228;
+  background-color: #66F;
 }
 
 h2 {
@@ -41,7 +41,7 @@ h4 {
 /* NAV */
 
 .nav-all {
-  background-color: #42A;
+  background-color: #114;
 }
 
 .logo-link {
@@ -155,7 +155,7 @@ h4 {
 .editUserForm-container {
   display: inline-table;
   margin-right: 10px;
-  background-color: #005;
+  background-color: #114;
 }
 
 .VGC-editPage {

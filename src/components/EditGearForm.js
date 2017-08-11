@@ -25,7 +25,7 @@ class EditGearForm extends Component {
 
   componentDidMount() {
     axios
-    .get(`http://localhost:8080/users/${this.props.userId}/locations/${this.props.gearId}`, {
+    .get(`http://localhost:8080/users/${window.localStorage.user_id}/gear/${this.props.gear_id}`, {
       headers: {
         'Authorization': window.localStorage.getItem('token')
       }
@@ -56,6 +56,7 @@ class EditGearForm extends Component {
       console.log(err);
     });
   }
+  // VALUE MUST BE EQUAL TO THE STATE OF THE COMPONENT YOU ARE IN WHEN TAKING DATA FROM INPUT FIELDS (HOISTED STATE) ---- CAN NOT DO THIS WITH PROPS - USE PLACEHOLDER
 
   handleChange(event) {
     this.setState({
@@ -77,7 +78,7 @@ class EditGearForm extends Component {
               Name
             </div>
             <span>
-              <input onChange={this.handleChange} name='name' type='text' value={this.state.name}/>
+              <input onChange={this.handleChange} name='name' type='text' placeholder={this.props.gearData.name}/>
             </span>
           </div>
 
@@ -86,7 +87,7 @@ class EditGearForm extends Component {
               Item Category
             </div>
             <span>
-              <input onChange={this.handleChange} name='item_category' type='text' value={this.state.item_category}/>
+              <input onChange={this.handleChange} name='item_category' type='text' placeholder={this.props.gearData.item_category}/>
             </span>
           </div>
 
@@ -95,7 +96,7 @@ class EditGearForm extends Component {
               Item
             </div>
             <span>
-              <input onChange={this.handleChange} name='item' type='text' value={this.state.item}/>
+              <input onChange={this.handleChange} name='item' type='text' placeholder={this.props.gearData.item}/>
             </span>
           </div>
 
@@ -104,7 +105,7 @@ class EditGearForm extends Component {
               Manufacturer
             </div>
             <span>
-              <input onChange={this.handleChange} name='manufacturer' type='text' value={this.state.manufacturer}/>
+              <input onChange={this.handleChange} name='manufacturer' type='text' placeholder={this.props.gearData.manufacturer}/>
             </span>
           </div>
 
@@ -113,7 +114,7 @@ class EditGearForm extends Component {
               Year
             </div>
             <span>
-              <input onChange={this.handleChange} name='year' type='text' value={this.state.year}/>
+              <input onChange={this.handleChange} name='year' type='text' placeholder={this.props.gearData.year}/>
             </span>
           </div>
 
@@ -122,7 +123,7 @@ class EditGearForm extends Component {
               Serial Number
             </div>
             <span>
-              <input onChange={this.handleChange} name='serial_number' type='text' value={this.state.serial_number}/>
+              <input onChange={this.handleChange} name='serial_number' type='text' placeholder={this.props.gearData.serial_number}/>
             </span>
           </div>
 
@@ -131,7 +132,7 @@ class EditGearForm extends Component {
               Condition
             </div>
             <span>
-              <input onChange={this.handleChange} name='condition' type='text' value={this.state.condition}/>
+              <input onChange={this.handleChange} name='condition' type='text' placeholder={this.props.gearData.condition}/>
             </span>
           </div>
 
@@ -140,7 +141,7 @@ class EditGearForm extends Component {
               Description
             </div>
             <span>
-              <input onChange={this.handleChange} name='description' type='text' value={this.state.description}/>
+              <input onChange={this.handleChange} name='description' type='text' placeholder={this.props.gearData.description}/>
             </span>
           </div>
 
@@ -149,7 +150,7 @@ class EditGearForm extends Component {
               Add Photo
             </div>
             <span>
-              <input onChange={this.handleChange} name='photo_1' type='text' placeholder='http://' value={this.state.photo_1}/>
+              <input onChange={this.handleChange} name='photo_1' type='text' placeholder={this.props.gearData.photo_1}/>
             </span>
           </div>
 
@@ -158,7 +159,7 @@ class EditGearForm extends Component {
                 Add Photo
             </div>
             <span>
-              <input onChange={this.handleChange} name='photo_2' type='text' placeholder='http://' value={this.state.photo_2}/>
+              <input onChange={this.handleChange} name='photo_2' type='text' placeholder={this.props.gearData.photo_2}/>
             </span>
           </div>
 
@@ -167,12 +168,12 @@ class EditGearForm extends Component {
               Add Photo
             </div>
             <span>
-              <input onChange={this.handleChange} name='photo_3' type='text' placeholder='http://' value={this.state.photo_3}/>
+              <input onChange={this.handleChange} name='photo_3' type='text' placeholder={this.props.gearData.photo_3}/>
             </span>
           </div>
 
           <div className='hidden-ui'>
-            <input onChange={this.handleChange} name='user_id' type='text' value={this.state.user_id} />
+            <input onChange={this.handleChange} name='user_id' type='text' placeholder={this.props.gearData.user_id} />
           </div>
 
           <div className=''>

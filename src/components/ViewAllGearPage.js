@@ -8,44 +8,11 @@ import { Link } from 'react-router';
 class ViewAllGearPage extends Component {
   constructor(props) {
     super(props);
-    console.log("VIEW ALL G PROPS", props);
     this.state = {
       gear: []
     };
+    console.log("VIEW ALL G PROPS", props);
   }
-  // componentDidMount() {
-  //   axios
-  //   .get(`http://localhost:8080/users/${this.props.params.user_id}`, {
-  //     headers: {
-  //       'Authorization': window.localStorage.getItem('token')
-  //     }
-  //   })
-  //   .then((response) => {
-  //     const userData = response.data;
-  //     this.setState({
-  //       user: userData,
-  //     });
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
-  //
-  //   axios
-  //   .get(`http://localhost:8080/users/${this.props.params.user_id}/gear`,{
-  //     headers: {
-  //       'Authorization': window.localStorage.getItem('token')
-  //     }
-  //   })
-  //   .then((response) => {
-  //     const gearData = response.data.gear;
-  //     this.setState({
-  //       gear: response.data.gear
-  //     });
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
-  // }
 
   renderGear() {
     // console.log('inside render gear with: ', this.props.gear);

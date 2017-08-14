@@ -66,120 +66,124 @@ class EditGearForm extends Component {
 
   render() {
     return(
-      <div className=''>
-        <div className='gear-photos'>
-          <img src={`${this.state.photo_1}`} width='90px'/>
-          <img src={`${this.state.photo_2}`} width='90px'/>
-          <img src={`${this.state.photo_3}`} width='90px'/>
-        </div>
-        <form onSubmit={this.handleSubmit.bind(this)}>
-          <div>
-            <div className='formLabel'>
-              Name
-            </div>
-            <span>
-              <input onChange={this.handleChange} name='name' type='text' placeholder={this.props.gearData.name}/>
-            </span>
-          </div>
+      <div className='edit-gear-form-contain'>
 
-          <div>
-            <div className='formLabel'>
-              Item Category
+        <div className='edit-gear-form-inputs'>
+          <form onSubmit={this.handleSubmit.bind(this)}>
+            <div>
+              <div className='formLabel'>
+                Name
+              </div>
+              <span>
+                <input onChange={this.handleChange} name='name' type='text' placeholder={this.props.gearData.name}/>
+              </span>
             </div>
-            <span>
-              <input onChange={this.handleChange} name='item_category' type='text' placeholder={this.props.gearData.item_category}/>
-            </span>
-          </div>
 
-          <div>
-            <div className='formLabel'>
-              Item
+            <div>
+              <div className='formLabel'>
+                Item Category
+              </div>
+              <span>
+                <input onChange={this.handleChange} name='item_category' type='text' placeholder={this.props.gearData.item_category}/>
+              </span>
             </div>
-            <span>
-              <input onChange={this.handleChange} name='item' type='text' placeholder={this.props.gearData.item}/>
-            </span>
-          </div>
 
-          <div>
-            <div className='formLabel'>
-              Manufacturer
+            <div>
+              <div className='formLabel'>
+                Item
+              </div>
+              <span>
+                <input onChange={this.handleChange} name='item' type='text' placeholder={this.props.gearData.item}/>
+              </span>
             </div>
-            <span>
-              <input onChange={this.handleChange} name='manufacturer' type='text' placeholder={this.props.gearData.manufacturer}/>
-            </span>
-          </div>
 
-          <div>
-            <div className='formLabel'>
-              Year
+            <div>
+              <div className='formLabel'>
+                Manufacturer
+              </div>
+              <span>
+                <input onChange={this.handleChange} name='manufacturer' type='text' placeholder={this.props.gearData.manufacturer}/>
+              </span>
             </div>
-            <span>
-              <input onChange={this.handleChange} name='year' type='text' placeholder={this.props.gearData.year}/>
-            </span>
-          </div>
 
-          <div>
-            <div className='formLabel'>
-              Serial Number
+            <div>
+              <div className='formLabel'>
+                Year
+              </div>
+              <span>
+                <input onChange={this.handleChange} name='year' type='text' placeholder={this.props.gearData.year}/>
+              </span>
             </div>
-            <span>
-              <input onChange={this.handleChange} name='serial_number' type='text' placeholder={this.props.gearData.serial_number}/>
-            </span>
-          </div>
 
-          <div>
-            <div className='formLabel'>
-              Condition
+            <div>
+              <div className='formLabel'>
+                Serial Number
+              </div>
+              <span>
+                <input onChange={this.handleChange} name='serial_number' type='text' placeholder={this.props.gearData.serial_number}/>
+              </span>
             </div>
-            <span>
-              <input onChange={this.handleChange} name='condition' type='text' placeholder={this.props.gearData.condition}/>
-            </span>
-          </div>
 
-          <div>
-            <div className='formLabel'>
-              Description
+            <div>
+              <div className='formLabel'>
+                Condition
+              </div>
+              <span>
+                <input onChange={this.handleChange} name='condition' type='text' placeholder={this.props.gearData.condition}/>
+              </span>
             </div>
-            <span>
-              <input onChange={this.handleChange} name='description' type='text' placeholder={this.props.gearData.description}/>
-            </span>
-          </div>
 
-          <div>
-            <div className='formLabel'>
-              Add Photo
+            <div>
+              <div className='formLabel'>
+                Description
+              </div>
+              <span>
+                <input onChange={this.handleChange} name='description' type='text' placeholder={this.props.gearData.description}/>
+              </span>
             </div>
-            <span>
-              <input onChange={this.handleChange} name='photo_1' type='text' placeholder={this.props.gearData.photo_1}/>
-            </span>
-          </div>
 
-          <div>
-            <div className='formLabel'>
+            <div>
+              <div className='formLabel'>
                 Add Photo
+              </div>
+              <span>
+                <input onChange={this.handleChange} name='photo_1' type='text' placeholder={this.props.gearData.photo_1}/>
+              </span>
             </div>
-            <span>
-              <input onChange={this.handleChange} name='photo_2' type='text' placeholder={this.props.gearData.photo_2}/>
-            </span>
-          </div>
 
-          <div>
-            <div className='formLabel'>
-              Add Photo
+            <div>
+              <div className='formLabel'>
+                  Add Photo
+              </div>
+              <span>
+                <input onChange={this.handleChange} name='photo_2' type='text' placeholder={this.props.gearData.photo_2}/>
+              </span>
             </div>
-            <span>
-              <input onChange={this.handleChange} name='photo_3' type='text' placeholder={this.props.gearData.photo_3}/>
-            </span>
-          </div>
 
-          <div className='hidden-ui'>
-            <input onChange={this.handleChange} name='user_id' type='text' placeholder={this.props.gearData.user_id} />
-          </div>
+            <div>
+              <div className='formLabel'>
+                Add Photo
+              </div>
+              <span>
+                <input onChange={this.handleChange} name='photo_3' type='text' placeholder={this.props.gearData.photo_3}/>
+              </span>
+            </div>
 
-          <div className=''>
-            <button type='submit' className='edit-gear-button button'>Update Item</button>
-          </div>
-        </form>
+            <div className='hidden-ui'>
+              <input onChange={this.handleChange} name='user_id' type='text' placeholder={this.props.gearData.user_id} />
+            </div>
+
+            <div className=''>
+              <button type='submit' className='edit-gear-button button'>Update Item</button>
+            </div>
+          </form>
+        </div>
+
+        <div className='gear-photos'>
+          <img src={`${this.state.photo_1}`} width='100%'/>
+          <img src={`${this.state.photo_2}`} width='100%'/>
+          <img src={`${this.state.photo_3}`} width='100%'/>
+        </div>
       </div>
     );
   }

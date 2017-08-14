@@ -76,7 +76,7 @@ h4 {
   height: 100px;
 }
 
-/* USER HOME */
+/* USER HOME and VIEW ALL GEAR */
 
 .viewGearContainer {
   display: inline-block;
@@ -86,9 +86,6 @@ h4 {
   height: 600px;
   color: #000;
   background-color: #24D;
-  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,6,0.75);
-  -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,6,0.75);
-  box-shadow: 0px 0px 15px 0px rgba(0,0,6,0.75);
   overflow: auto;
 }
 
@@ -146,7 +143,7 @@ h4 {
   margin: 0 5;
 }
 
-/* USER EDIT PAGE */
+/* EDIT USER PAGE and FORM */
 
 .editUserPage-container {
   display: flex;
@@ -162,18 +159,28 @@ h4 {
   overflow: auto;
 }
 
+
+/* EDIT GEAR PAGE and FORM */
+
+.edit-gear-form-contain {
+  display: inline-flex;
+}
+
+.gear-photos {
+  display: inline-table;
+  margin-left: 200px;
+}
+
+.edit-gear-form-inputs {
+
+}
+
 /* SEARCH USERS PAGE */
 
 .show-all-users-title {
   text-align: center;
   font-size: 100px;
   color: #336;
-}
-
-/* EDIT GEAR PAGE */
-
-.editUserPage-container {
-
 }
 
 /* FOOTER */

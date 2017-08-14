@@ -73,7 +73,7 @@ class ViewAllGearPage extends Component {
         }
       })
       .then(() => {
-        // reload page or go to userpage
+        // reload page or go to userpage*************
         // Router.dispatch(`users/`, null);
         this.props.getGear();
         browserHistory.push(`/users/${window.localStorage.user_id}`);

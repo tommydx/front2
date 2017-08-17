@@ -18,23 +18,8 @@ class ViewAllGearPage extends Component {
     // console.log('inside render gear with: ', this.props.gear);
     // Using .map function here and returning a div with the chosen attributes of the object to be printed to the webpage - then returning the entire array of user's gear - similar to FOR loop
     let gear = this.props.gear.map((piece, i) => {
-      // axios
-      // .get(`http://localhost:8080/users/${this.props.params.user_id}/gear`,{
-      //   headers: {
-      //     'Authorization': window.localStorage.getItem('token')
-      //   }
-      // })
-      // .then((response) => {
-      //   const gearData = response.data.gear;
-      //   this.setState({
-      //     gear: response.data.gear
-      //   });
-      // })
-      // .catch((err) => {
-      //   console.log(err);
-      // });
-
-      window.localStorage.setItem("gear_id", piece.id);
+      let ok = window.localStorage.setItem("gear_id", '');
+      console.log(ok);
       return(
         <div key={i} className="viewGearItem">
           <h3>{piece.name}</h3>
@@ -46,8 +31,9 @@ class ViewAllGearPage extends Component {
 
           <div className='edit-gear-button'>
             <Link to={`/users/${window.localStorage.getItem('user_id')}/gear/${piece.id}/edit`}>
-              <button type='submit'  className='edit-gear-button button'>EDIT ITEM</button>
-              </Link>
+              <button type='button' className='edit-gear-button button'>EDIT ITEM
+              </button>
+            </Link>
           </div>
 
           <button

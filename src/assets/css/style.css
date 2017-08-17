@@ -93,6 +93,8 @@ h4 {
 .viewGearContainer h2 {
   text-decoration: underline overline;
   text-align: center;
+  text-shadow: none;
+  color: #99D;
 }
 
 .viewGearContainer h3 {

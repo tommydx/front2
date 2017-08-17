@@ -27,4 +27,11 @@ render(
     <Route path="/users/:user_id/search" component={SearchUsersPage} />
   </Router>
   , document.getElementById('app')
+
+  // <PortalPage name={this.state.name}/>
+  // this.props.name
+  //
+  // passing(){
+  //   <PortalPage name={this.state.name}/>
+  // }
 );

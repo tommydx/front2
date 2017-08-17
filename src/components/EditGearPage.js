@@ -19,7 +19,7 @@ class EditGearPage extends Component {
   componentDidMount() {
     console.log("MY PROPS", this.props)
     axios
-    .get(`http://localhost:8080/users/${window.localStorage.user_id}`, {
+    .get(`http://localhost:8080/users/${window.localStorage.user_id}/gear/${gear_id}`, {
       headers: {
         'Authorization': window.localStorage.getItem('token')
       }
@@ -35,7 +35,10 @@ class EditGearPage extends Component {
     });
 
     let gearId = this.props.params.gear_id;
-    console.log("GGGGG", gearId);
+
+    console.log(this.state,'<-----------')
+
+    console.log("GGGGG=====>", gearId);
     axios
     .get(`http://localhost:8080/users/${window.localStorage.user_id}/gear/${gearId}`, {
       headers: {

@@ -24,6 +24,7 @@ class EditGearForm extends Component {
   }
 
   componentDidMount() {
+    console.log('=========>',this.state)
     axios
     .get(`http://localhost:8080/users/${window.localStorage.user_id}/gear/${this.props.gear_id}`, {
       headers: {
@@ -32,7 +33,9 @@ class EditGearForm extends Component {
     })
     .then((response) => {
       const gearData = response.data;
-      this.setState(gearData);
+      console.log('======>2',gearData)
+      this.setState({
+        gearData});
     })
     .catch((err) => {
       console.log(err);
@@ -42,7 +45,7 @@ class EditGearForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
     axios
-    .put(`http://localhost:8080/users/${this.props.userId}/gear/${this.props.gearId}`, {
+    .put(`http://localhost:8080/users/${window.localStorage.user_id}/gear/${this.props.gear_id}`, {
       gear: this.state
     }, {
       headers: {
